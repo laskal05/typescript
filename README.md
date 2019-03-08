@@ -7,4 +7,9 @@ https://medium.com/iqoqo-engineering/two-advanced-techniques-to-make-you-a-types
 
 ## Third
 
+# References
+## Playground
+https://www.typescriptlang.org/play/
 
+## Handbook
+https://www.typescriptlang.org/docs/handbook/basic-types.html

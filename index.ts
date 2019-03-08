@@ -1,7 +1,7 @@
 class User {
   static readonly minimumNameLength: number = 4;
 
-  constructor(private _name: string, private readonly email: string) {
+  constructor(private _name: string, private readonly _email: string) {
     this.assertValidName(_name);
   }
 
@@ -23,14 +23,20 @@ class User {
     this.assertValidName(newName);
     this._name = newName;
   }
+
+  get email(): string {
+    return this._email;
+  }
 }
 
-const user = new User("laskal05-before");
+const user = new User("laskal05-before", "example@sample.com");
 
 console.log("Get name");
 console.log(user.name);
+console.log(user.email);
 
 console.log("");
 console.log("Set name & Get name");
 user.name = "laskal05-after";
 console.log(user.name);
+console.log(user.email);

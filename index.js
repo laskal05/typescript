@@ -1,6 +1,7 @@
 var User = /** @class */ (function () {
-    function User(_name) {
+    function User(_name, _email) {
         this._name = _name;
+        this._email = _email;
         this.assertValidName(_name);
     }
     User.prototype.assertValidName = function (name) {
@@ -22,15 +23,22 @@ var User = /** @class */ (function () {
         enumerable: true,
         configurable: true
     });
+    Object.defineProperty(User.prototype, "email", {
+        get: function () {
+            return this._email;
+        },
+        enumerable: true,
+        configurable: true
+    });
     User.minimumNameLength = 4;
     return User;
 }());
-var user = new User("laskal05-before");
+var user = new User("laskal05-before", "example@sample.com");
 console.log("Get name");
 console.log(user.name);
+console.log(user.email);
 console.log("");
 console.log("Set name & Get name");
 user.name = "laskal05-after";
 console.log(user.name);
-user.name = "aa";
-console.log(user.name);
+console.log(user.email);
